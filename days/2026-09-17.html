@@ -62,7 +62,7 @@ h1 { font-size: 1.45rem; margin: 0 0 8px; line-height: 1.35; }
   gap: 8px;
   margin-top: 12px;
 }
-.toolbar button, .zh-toggle {
+.toolbar button, .toggle {
   font: inherit;
   font-size: 13px;
   cursor: pointer;
@@ -72,7 +72,7 @@ h1 { font-size: 1.45rem; margin: 0 0 8px; line-height: 1.35; }
   border-radius: 999px;
   padding: 6px 12px;
 }
-.toolbar button:hover, .zh-toggle:hover { border-color: #c9c0b2; }
+.toolbar button:hover, .toggle:hover { border-color: #c9c0b2; }
 .block {
   background: var(--card);
   border: 1px solid var(--border);
@@ -81,18 +81,18 @@ h1 { font-size: 1.45rem; margin: 0 0 8px; line-height: 1.35; }
   margin-bottom: 14px;
 }
 .en { font-size: 1.05rem; margin: 0 0 10px; }
-.zh-wrap { margin: 0 0 10px; }
+.panel { margin: 0 0 10px; }
+.panel-body { display: none; margin-top: 10px; }
+.panel.open .panel-body { display: block; }
+.panel.open > .toggle { background: #1a3a2a; color: #fff; border-color: #1a3a2a; }
 .zh {
   font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif;
   color: var(--zh);
   font-size: .98rem;
-  margin: 10px 0 0;
+  margin: 0;
   padding-left: 10px;
   border-left: 3px solid #8fb89a;
-  display: none;
 }
-.zh-wrap.open .zh { display: block; }
-.zh-wrap.open .zh-toggle { background: #1a3a2a; color: #fff; border-color: #1a3a2a; }
 .notes {
   font-family: ui-sans-serif, system-ui, sans-serif;
   background: var(--note-bg);
@@ -113,6 +113,9 @@ h1 { font-size: 1.45rem; margin: 0 0 8px; line-height: 1.35; }
   font-size: 14px;
 }
 .tip h2 { font-size: 15px; margin: 0 0 8px; }
+.tip-body { display: none; }
+.tip.open .tip-body { display: block; }
+.tip.open > .toggle { background: #1a3a2a; color: #fff; border-color: #1a3a2a; margin-bottom: 10px; }
 footer {
   margin-top: 22px;
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -132,190 +135,226 @@ footer {
   <div class="badge">考研英语精读 · 2026-09-17</div>
   <h1>China's Huawei sets 2027 launch for new AI chips as it targets Nvidia</h1>
   <div class="meta">来源：Reuters · Casey Hall / Pan Che · <a href="https://www.reuters.com/world/asia-pacific/chinas-huawei-launch-two-new-ai-chips-2027-2026-09-17/" target="_blank" rel="noopener">原文链接</a></div>
-  <div class="guide">读法：先自己啃英文 → 卡住再点「显示中文」→ 生词看蓝底注释。中文默认隐藏，避免一眼瞄到答案。</div>
+  <div class="guide">读法：先自己啃英文。中文译文、生词注释、文末复盘都默认折叠，点一下才展开，避免一眼瞄到答案。</div>
   <div class="toolbar">
-    <button type="button" id="showAllZh">全部显示中文</button>
-    <button type="button" id="hideAllZh">全部隐藏中文</button>
+    <button type="button" id="showAll">全部展开</button>
+    <button type="button" id="hideAll">全部折叠</button>
   </div>
 </header>
 
 <section class="block">
   <p class="en">Huawei Technologies will launch two new artificial-intelligence semiconductors in 2027, rotating chairman David Wang said on Thursday, as the Chinese tech giant builds up its AI computing business and seeks to challenge U.S. chipmaker Nvidia.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">华为轮值董事长汪涛周四表示，公司将在 2027 年推出两款新的人工智能半导体。这家中国科技巨头正加码 AI 算力业务，并寻求挑战美国芯片厂商英伟达。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">华为轮值董事长汪涛周四表示，公司将在 2027 年推出两款新的人工智能半导体。这家中国科技巨头正加码 AI 算力业务，并寻求挑战美国芯片厂商英伟达。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>semiconductor</strong> /ˌsemikənˈdʌktə(r)/ n. 半导体</div>
-    <div class="item"><strong>rotating chairman</strong> 轮值董事长（轮流担任主席）</div>
-    <div class="item"><strong>build up</strong> 逐步加强、壮大</div>
-    <div class="item"><strong>chipmaker</strong> 芯片制造商</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>semiconductor</strong> /ˌsemikənˈdʌktə(r)/ n. 半导体</div>
+      <div class="item"><strong>rotating chairman</strong> 轮值董事长（轮流担任主席）</div>
+      <div class="item"><strong>build up</strong> 逐步加强、壮大</div>
+      <div class="item"><strong>chipmaker</strong> 芯片制造商</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">Huawei plans to launch the 960DT in the first quarter of 2027 and the Ascend 960PR in the third quarter, Wang said.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">汪涛称，华为计划在 2027 年第一季度推出 960DT，第三季度推出昇腾 Ascend 960PR。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">汪涛称，华为计划在 2027 年第一季度推出 960DT，第三季度推出昇腾 Ascend 960PR。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>first / third quarter</strong> 第一/第三季度（财报与商业新闻高频）</div>
-    <div class="item"><strong>Ascend</strong> 华为昇腾系列 AI 芯片品牌名</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>first / third quarter</strong> 第一/第三季度（财报与商业新闻高频）</div>
+      <div class="item"><strong>Ascend</strong> 华为昇腾系列 AI 芯片品牌名</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">The company is also working on ways to connect very large numbers of AI chips, allowing them to work together as one bigger computing system. Most advanced AI programmes require more processing power than a single chip can provide.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">公司还在研究如何把大量 AI 芯片互联起来，使它们像一台更大的计算系统协同工作。多数先进 AI 程序所需算力，已超出单颗芯片的能力。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">公司还在研究如何把大量 AI 芯片互联起来，使它们像一台更大的计算系统协同工作。多数先进 AI 程序所需算力，已超出单颗芯片的能力。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>processing power</strong> 处理能力；算力</div>
-    <div class="item"><strong>programme</strong> (BrE) = program 程序、项目</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>processing power</strong> 处理能力；算力</div>
+      <div class="item"><strong>programme</strong> (BrE) = program 程序、项目</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">Wang said in a speech at a company event in Shanghai that Huawei's UnifiedBus technology would be a key link in the company's next generation of large AI systems. The technology is intended to help chips share information and work together more efficiently.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">汪涛在上海的一场公司活动上表示，华为的 UnifiedBus 技术将是其下一代大型 AI 系统的关键环节。该技术旨在帮助芯片更高效地共享信息、协同工作。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">汪涛在上海的一场公司活动上表示，华为的 UnifiedBus 技术将是其下一代大型 AI 系统的关键环节。该技术旨在帮助芯片更高效地共享信息、协同工作。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>key link</strong> 关键环节/纽带</div>
-    <div class="item"><strong>next generation</strong> 下一代</div>
-    <div class="item"><strong>be intended to</strong> 旨在、目的是</div>
-    <div class="item"><strong>efficiently</strong> /ɪˈfɪʃntli/ adv. 高效地</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>key link</strong> 关键环节/纽带</div>
+      <div class="item"><strong>next generation</strong> 下一代</div>
+      <div class="item"><strong>be intended to</strong> 旨在、目的是</div>
+      <div class="item"><strong>efficiently</strong> /ɪˈfɪʃntli/ adv. 高效地</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">Huawei has developed 11 semiconductors based on UnifiedBus technology for use in its large systems, Wang said. Its largest linked systems, which the company calls superclusters, can support up to 1 million AI processors, he added.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">汪涛说，华为已基于 UnifiedBus 技术开发了 11 款用于大型系统的半导体。其最大的互联系统被称作“超集群”（superclusters），最多可支持多达 100 万颗 AI 处理器。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">汪涛说，华为已基于 UnifiedBus 技术开发了 11 款用于大型系统的半导体。其最大的互联系统被称作“超集群”（superclusters），最多可支持多达 100 万颗 AI 处理器。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>based on</strong> 基于</div>
-    <div class="item"><strong>supercluster</strong> 超集群（大量节点互联的超大规模系统）</div>
-    <div class="item"><strong>up to</strong> 多达、至多</div>
-    <div class="item"><strong>processor</strong> 处理器</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>based on</strong> 基于</div>
+      <div class="item"><strong>supercluster</strong> 超集群（大量节点互联的超大规模系统）</div>
+      <div class="item"><strong>up to</strong> 多达、至多</div>
+      <div class="item"><strong>processor</strong> 处理器</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">Huawei has shipped more than 1,000 smaller linked systems, called supernodes, to more than 370 customers, Wang said. A supernode is a system that brings together many AI chips to tackle the same task.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">汪涛表示，华为已向逾 370 家客户交付了 1000 多套规模较小的互联系统，称为“超节点”（supernodes）。超节点是把多颗 AI 芯片聚合在一起、共同完成同一任务的系统。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">汪涛表示，华为已向逾 370 家客户交付了 1000 多套规模较小的互联系统，称为“超节点”（supernodes）。超节点是把多颗 AI 芯片聚合在一起、共同完成同一任务的系统。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>ship</strong> v. 发货、出货（商业新闻常用）</div>
-    <div class="item"><strong>bring together</strong> 汇集、聚合</div>
-    <div class="item"><strong>tackle</strong> /ˈtækl/ v. 处理、应对（难题）</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>ship</strong> v. 发货、出货（商业新闻常用）</div>
+      <div class="item"><strong>bring together</strong> 汇集、聚合</div>
+      <div class="item"><strong>tackle</strong> /ˈtækl/ v. 处理、应对（难题）</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">The United States and China are competing to develop the chips, data centres and software that underpin artificial intelligence.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">美中两国正在竞相发展支撑人工智能的芯片、数据中心与软件。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">美中两国正在竞相发展支撑人工智能的芯片、数据中心与软件。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>compete to do</strong> 竞相做某事</div>
-    <div class="item"><strong>data centre</strong> (BrE) 数据中心</div>
-    <div class="item"><strong>underpin</strong> /ˌʌndəˈpɪn/ v. 支撑、构成…的基础（考研高频）</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>compete to do</strong> 竞相做某事</div>
+      <div class="item"><strong>data centre</strong> (BrE) 数据中心</div>
+      <div class="item"><strong>underpin</strong> /ˌʌndəˈpɪn/ v. 支撑、构成…的基础（考研高频）</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">Washington has imposed export controls that restrict China's access to certain advanced computing chips and semiconductor manufacturing equipment, while Chinese companies and policymakers have placed greater emphasis on building domestic alternatives.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">华盛顿实施了出口管制，限制中国获取部分先进计算芯片与半导体制造设备；与此同时，中国企业与决策者更加重视打造国产替代方案。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">华盛顿实施了出口管制，限制中国获取部分先进计算芯片与半导体制造设备；与此同时，中国企业与决策者更加重视打造国产替代方案。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>impose</strong> /ɪmˈpəʊz/ v. 实施、强加（管制/制裁）</div>
-    <div class="item"><strong>export controls</strong> 出口管制</div>
-    <div class="item"><strong>restrict access to</strong> 限制对…的获取</div>
-    <div class="item"><strong>place emphasis on</strong> 强调、重视</div>
-    <div class="item"><strong>domestic alternatives</strong> 国内替代品/国产方案</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>impose</strong> /ɪmˈpəʊz/ v. 实施、强加（管制/制裁）</div>
+      <div class="item"><strong>export controls</strong> 出口管制</div>
+      <div class="item"><strong>restrict access to</strong> 限制对…的获取</div>
+      <div class="item"><strong>place emphasis on</strong> 强调、重视</div>
+      <div class="item"><strong>domestic alternatives</strong> 国内替代品/国产方案</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">That has made the ability to connect chips increasingly important for Chinese technology companies. If they cannot freely buy the most advanced foreign chips, they can seek more computing power by joining larger numbers of locally available chips in one system. But that approach only works well if the chips can exchange information quickly enough.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">这也使“把芯片连起来”的能力对中国科技公司愈发重要。若无法自由采购最先进的外国芯片，它们可以通过把更多本地可得芯片接入同一系统来换取算力。但前提是：芯片之间能足够快地交换信息。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">这也使“把芯片连起来”的能力对中国科技公司愈发重要。若无法自由采购最先进的外国芯片，它们可以通过把更多本地可得芯片接入同一系统来换取算力。但前提是：芯片之间能足够快地交换信息。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>increasingly</strong> 日益、越来越</div>
-    <div class="item"><strong>locally available</strong> 本地可得的</div>
-    <div class="item"><strong>approach</strong> n. 方法、路径</div>
-    <div class="item"><strong>exchange information</strong> 交换信息</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>increasingly</strong> 日益、越来越</div>
+      <div class="item"><strong>locally available</strong> 本地可得的</div>
+      <div class="item"><strong>approach</strong> n. 方法、路径</div>
+      <div class="item"><strong>exchange information</strong> 交换信息</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">U.S. export controls have helped Huawei emerge as a prominent Chinese supplier of AI chips. Still, it faces a well-established market leader in Nvidia, whose hardware and software tools are widely used by developers around the world.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">美国出口管制在客观上帮助华为成为中国突出的 AI 芯片供应商。不过它仍要面对英伟达这位根基深厚的市场领导者——其软硬件工具已被全球开发者广泛使用。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">美国出口管制在客观上帮助华为成为中国突出的 AI 芯片供应商。不过它仍要面对英伟达这位根基深厚的市场领导者——其软硬件工具已被全球开发者广泛使用。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>emerge as</strong> 崛起为、成为</div>
-    <div class="item"><strong>prominent</strong> /ˈprɒmɪnənt/ adj. 突出的、显著的</div>
-    <div class="item"><strong>well-established</strong> 根基稳固的、老牌的</div>
-    <div class="item"><strong>market leader</strong> 市场领导者</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>emerge as</strong> 崛起为、成为</div>
+      <div class="item"><strong>prominent</strong> /ˈprɒmɪnənt/ adj. 突出的、显著的</div>
+      <div class="item"><strong>well-established</strong> 根基稳固的、老牌的</div>
+      <div class="item"><strong>market leader</strong> 市场领导者</div>
+    </div></div>
   </div>
 </section>
 
 <section class="block">
   <p class="en">A strong developer base will be important to Huawei's effort to make its hardware easier to use. Wang said Huawei's AI chip ecosystem had 5,270 monthly active developers.</p>
-  <div class="zh-wrap">
-    <button type="button" class="zh-toggle">显示中文</button>
-    <p class="zh">强大的开发者基础，对华为让硬件更易用的努力至关重要。汪涛表示，华为 AI 芯片生态已有 5270 名月活开发者。</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">强大的开发者基础，对华为让硬件更易用的努力至关重要。汪涛表示，华为 AI 芯片生态已有 5270 名月活开发者。</p></div>
   </div>
-  <div class="notes">
-    <div class="item"><strong>developer base</strong> 开发者群体/基础</div>
-    <div class="item"><strong>ecosystem</strong> /ˈiːkəʊsɪstəm/ n. 生态系统</div>
-    <div class="item"><strong>monthly active</strong> 月活跃（MAU 语境）</div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>developer base</strong> 开发者群体/基础</div>
+      <div class="item"><strong>ecosystem</strong> /ˈiːkəʊsɪstəm/ n. 生态系统</div>
+      <div class="item"><strong>monthly active</strong> 月活跃（MAU 语境）</div>
+    </div></div>
   </div>
 </section>
 
-
-<aside class="tip">
-  <h2>今日一分钟复盘</h2>
-  <p style="margin:0">核心逻辑：在无法轻易买到顶尖外购芯片时，中国厂商更依赖“多芯互联”来堆算力；因此总线/互联技术与生态同样关键。写作角度可记：<em>export controls → domestic alternatives → interconnect → ecosystem</em>。</p>
+<aside class="tip panel" data-kind="tip">
+  <button type="button" class="toggle" data-show="显示复盘" data-hide="隐藏复盘">显示复盘</button>
+  <div class="tip-body panel-body">
+    <h2>今日一分钟复盘</h2>
+    <p style="margin:0">核心逻辑：在无法轻易买到顶尖外购芯片时，中国厂商更依赖“多芯互联”来堆算力；因此总线/互联技术与生态同样关键。写作角度可记：<em>export controls → domestic alternatives → interconnect → ecosystem</em>。</p>
+  </div>
 </aside>
 
 <footer>推特新闻 · 每日考研英语精读 · 仅供个人学习 · 原文版权归 Reuters</footer>
 </div>
 <script>
 (function () {
-  function setOpen(wrap, open) {
-    wrap.classList.toggle('open', open);
-    var btn = wrap.querySelector('.zh-toggle');
-    if (btn) btn.textContent = open ? '隐藏中文' : '显示中文';
+  function setOpen(panel, open) {
+    panel.classList.toggle('open', open);
+    var btn = panel.querySelector(':scope > .toggle');
+    if (!btn) return;
+    btn.textContent = open ? (btn.getAttribute('data-hide') || '隐藏') : (btn.getAttribute('data-show') || '显示');
   }
-  document.querySelectorAll('.zh-wrap').forEach(function (wrap) {
-    var btn = wrap.querySelector('.zh-toggle');
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    var btn = panel.querySelector(':scope > .toggle');
     if (!btn) return;
     btn.addEventListener('click', function () {
-      setOpen(wrap, !wrap.classList.contains('open'));
+      setOpen(panel, !panel.classList.contains('open'));
     });
   });
-  var showAll = document.getElementById('showAllZh');
-  var hideAll = document.getElementById('hideAllZh');
+  var showAll = document.getElementById('showAll');
+  var hideAll = document.getElementById('hideAll');
   if (showAll) showAll.addEventListener('click', function () {
-    document.querySelectorAll('.zh-wrap').forEach(function (w) { setOpen(w, true); });
+    document.querySelectorAll('.panel').forEach(function (p) { setOpen(p, true); });
   });
   if (hideAll) hideAll.addEventListener('click', function () {
-    document.querySelectorAll('.zh-wrap').forEach(function (w) { setOpen(w, false); });
+    document.querySelectorAll('.panel').forEach(function (p) { setOpen(p, false); });
   });
 })();
 </script>
