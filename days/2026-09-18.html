@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>考研英语精读 · 2026-09-18 · Huawei AI Frontier Risks</title>
+<style>
+:root {
+  --bg: #f7f4ef;
+  --card: #fffdf9;
+  --ink: #1c1b19;
+  --muted: #5c574f;
+  --accent: #0b5fff;
+  --zh: #2a4a3a;
+  --note-bg: #eef4ff;
+  --border: #e5dfd4;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Source Serif 4", "Noto Serif SC", "Songti SC", Georgia, serif;
+  background: linear-gradient(180deg, #efe8dc 0%, var(--bg) 180px);
+  color: var(--ink);
+  line-height: 1.75;
+}
+.wrap { max-width: 820px; margin: 0 auto; padding: 24px 16px 64px; }
+header {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(40,30,10,.05);
+}
+.badge {
+  display: inline-block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: #fff;
+  background: #1a3a2a;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+}
+h1 { font-size: 1.45rem; margin: 0 0 8px; line-height: 1.35; }
+.meta { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; color: var(--muted); }
+.meta a { color: var(--accent); text-decoration: none; }
+.guide {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+.toolbar {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.toolbar button, .toggle {
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+.toolbar button:hover, .toggle:hover { border-color: #c9c0b2; }
+.block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 16px 12px;
+  margin-bottom: 14px;
+}
+.en { font-size: 1.05rem; margin: 0 0 10px; }
+.panel { margin: 0 0 10px; }
+.panel-body { display: none; margin-top: 10px; }
+.panel.open .panel-body { display: block; }
+.panel.open > .toggle { background: #1a3a2a; color: #fff; border-color: #1a3a2a; }
+.zh {
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  color: var(--zh);
+  font-size: .98rem;
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid #8fb89a;
+}
+.notes {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: var(--note-bg);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #243652;
+}
+.notes strong { color: #0b3d91; }
+.notes .item { margin: 4px 0; }
+.tip {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: #fff6e8;
+  border: 1px solid #f0dfbf;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+.tip h2 { font-size: 15px; margin: 0 0 8px; }
+.tip-body { display: none; }
+.tip.open .tip-body { display: block; }
+.tip.open > .toggle { background: #1a3a2a; color: #fff; border-color: #1a3a2a; margin-bottom: 10px; }
+footer {
+  margin-top: 22px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 520px) {
+  h1 { font-size: 1.2rem; }
+  .wrap { padding: 16px 12px 48px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="badge">考研英语精读 · 2026-09-18</div>
+  <h1>Huawei's Xu says Chinese AI not powerful enough yet to see frontier risks</h1>
+  <div class="meta">来源：Reuters · Casey Hall / Che Pan / Eduardo Baptista · <a href="https://www.reuters.com/world/china/huaweis-xu-says-chinese-ai-not-powerful-enough-yet-see-frontier-risks-2026-09-17/" target="_blank" rel="noopener">原文链接</a></div>
+  <div class="guide">读法：先自己啃英文。中文译文、生词注释、文末复盘都默认折叠，点一下才展开，避免一眼瞄到答案。</div>
+  <div class="toolbar">
+    <button type="button" id="showAll">全部展开</button>
+    <button type="button" id="hideAll">全部折叠</button>
+  </div>
+</header>
+
+<section class="block">
+  <p class="en">Huawei's Eric Xu said Chinese AI developers may not yet be advanced enough to experience the safety risks reported by leading U.S. firms, arguing they should continue developing more powerful models while balancing innovation against risk.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">华为轮值董事长徐直军表示，中国 AI 开发者或许尚不够先进，还无法切身体验美国顶尖公司所报告的安全风险。他主张在继续打造更强模型的同时，要在创新与风险之间取得平衡。</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>advanced</strong> /ədˈvɑːnst/ adj. 先进的、高水平的</div>
+      <div class="item"><strong>experience</strong> v. 经历、切身体验（此处非“经验”名词）</div>
+      <div class="item"><strong>argue</strong> v. 主张、论证（新闻报道常用）</div>
+      <div class="item"><strong>balance A against B</strong> 在 A 与 B 之间权衡/取得平衡</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">"If we look at the mainstream AI model providers in the United States, because they have massive computing power, maybe only they themselves know where they are in terms of the level of their models," Xu, Huawei's rotating chairman, told reporters at the company's annual Connect conference in Shanghai.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">徐直军在上海举行的公司年度全联接大会上对记者说：“如果我们看美国主流的 AI 模型提供商，因为他们拥有海量算力，或许只有他们自己才清楚自己的模型处在什么水平。”</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>mainstream</strong> /ˈmeɪnstriːm/ adj. 主流的</div>
+      <div class="item"><strong>provider</strong> n. 提供商、供应商</div>
+      <div class="item"><strong>massive</strong> /ˈmæsɪv/ adj. 巨大的、海量的</div>
+      <div class="item"><strong>in terms of</strong> 就…而言、在…方面</div>
+      <div class="item"><strong>rotating chairman</strong> 轮值董事长</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">"Maybe the type of risk from AI that they can feel, they can perceive, is something that people in China or AI model providers in China cannot."</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">“或许他们所能感受到、所能察觉到的那一类 AI 风险，是中国人或中国的 AI 模型提供商目前还察觉不到的。”</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>perceive</strong> /pəˈsiːv/ v. 察觉、感知（考研高频）</div>
+      <div class="item"><strong>the type of … that</strong> ……的那一类（定语从句）</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">His comments come as alarm over AI safety has intensified in the United States, where leading developers and researchers have warned that increasingly autonomous systems could bypass safeguards or become difficult to control. OpenAI this week said it would regularly disclose unexpected or unauthorized model behavior, while executives including Anthropic CEO Dario Amodei have called for slowing development to allow safeguards to catch up.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">他的这番话正值美国对 AI 安全的担忧加剧之际：领先的开发者与研究者警告，越来越自主的系统可能绕过安全防护，或变得难以控制。OpenAI 本周表示将定期披露模型的意外或未经授权行为；包括 Anthropic 首席执行官达里奥·阿莫代在内的高管则呼吁放慢开发节奏，好让安全措施赶上来。</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>alarm</strong> n. 担忧、警觉</div>
+      <div class="item"><strong>intensify</strong> /ɪnˈtensɪfaɪ/ v. 加剧、加强</div>
+      <div class="item"><strong>autonomous</strong> /ɔːˈtɒnəməs/ adj. 自主的、自治的</div>
+      <div class="item"><strong>bypass</strong> /ˈbaɪpɑːs/ v. 绕过、避开</div>
+      <div class="item"><strong>safeguard</strong> /ˈseɪfɡɑːd/ n. 安全措施、防护</div>
+      <div class="item"><strong>disclose</strong> /dɪsˈkləʊz/ v. 披露、公开</div>
+      <div class="item"><strong>unauthorized</strong> /ʌnˈɔːθəraɪzd/ adj. 未经授权的</div>
+      <div class="item"><strong>catch up</strong> 赶上、跟上</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">Such calls have drawn sharp criticism in China, where researchers and state media have argued that slowing development of the most advanced models could help preserve the technological lead of U.S. companies. Some Chinese commentators have portrayed proposals to "pace" frontier AI development as an attempt to constrain rivals that remain behind leading U.S. labs, rather than simply as a response to safety concerns.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">这类呼吁在中国招致尖锐批评。研究者与官方媒体认为，放慢最先进模型的开发，可能有助于保住美国公司的技术领先地位。一些中国评论者把“控制前沿 AI 开发节奏”的提议描绘成约束仍落后于美国顶尖实验室之对手的企图，而不只是对安全关切的回应。</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>draw criticism</strong> 招致批评</div>
+      <div class="item"><strong>sharp</strong> adj. 尖锐的、严厉的</div>
+      <div class="item"><strong>preserve</strong> /prɪˈzɜːv/ v. 维持、保住</div>
+      <div class="item"><strong>technological lead</strong> 技术领先地位</div>
+      <div class="item"><strong>portray A as B</strong> 把 A 描绘成 B</div>
+      <div class="item"><strong>pace</strong> v. 控制节奏、调节速度</div>
+      <div class="item"><strong>frontier</strong> /ˈfrʌntɪə(r)/ adj./n. 前沿（的）</div>
+      <div class="item"><strong>constrain</strong> /kənˈstreɪn/ v. 限制、约束（考研高频）</div>
+      <div class="item"><strong>rival</strong> /ˈraɪvl/ n. 对手、竞争者</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">Beijing has generally treated advanced AI as a powerful but manageable technology and is pressing ahead with rapid deployment while developing mandatory standards, security assessments and other safeguards against risks including autonomous agents circumventing controls or attacking outside systems. China is also drafting a mandatory national standard for AI agent safety.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">北京总体上把先进 AI 视为强大但可控的技术，一边推进快速部署，一边制定强制性标准、安全评估及其他防护措施，以防范自主智能体绕过管控或攻击外部系统等风险。中国还在起草面向 AI 智能体安全的强制性国家标准。</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>manageable</strong> /ˈmænɪdʒəbl/ adj. 可管理的、可控的</div>
+      <div class="item"><strong>press ahead with</strong> 推进、加紧推进</div>
+      <div class="item"><strong>deployment</strong> /dɪˈplɔɪmənt/ n. 部署、落地应用</div>
+      <div class="item"><strong>mandatory</strong> /ˈmændətəri/ adj. 强制性的（考研高频）</div>
+      <div class="item"><strong>assessment</strong> /əˈsesmənt/ n. 评估</div>
+      <div class="item"><strong>circumvent</strong> /ˌsɜːkəmˈvent/ v. 规避、绕过</div>
+      <div class="item"><strong>draft</strong> v. 起草</div>
+      <div class="item"><strong>agent</strong> n. （AI）智能体/代理</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">Xu said Chinese developers might need to accelerate their development before they encounter similar risks to those encountered by frontier U.S. AI models. "I think maybe AI model providers in China may need to speed up their pace to the level that they could also feel the risks from AI development," he said. "I think we need to strike a balance between driving AI development and managing AI risk."</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">徐直军表示，中国开发者或许需要加快发展，才能遇到与美国前沿 AI 模型类似的风险。“我觉得中国的 AI 模型提供商或许需要提速，达到也能感受到 AI 发展所带来风险的水平，”他说。“我认为我们需要在推动 AI 发展与管理 AI 风险之间取得平衡。”</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>accelerate</strong> /əkˈseləreɪt/ v. 加速</div>
+      <div class="item"><strong>encounter</strong> /ɪnˈkaʊntə(r)/ v. 遭遇、遇到</div>
+      <div class="item"><strong>speed up</strong> 加快</div>
+      <div class="item"><strong>strike a balance between A and B</strong> 在 A 与 B 之间取得平衡（写作高分句）</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">Huawei itself expects autonomous AI agents to proliferate rapidly. The company forecast this week that agents — AI systems that can plan tasks, make decisions and use software or other tools with limited human supervision — would account for more than 90% of global AI processing traffic by 2035. Huawei has projected as many as 900 billion active agents by then and identified agent security and privacy as crucial technologies.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">华为自身也预计自主 AI 智能体将快速普及。公司本周预测：到 2035 年，能够规划任务、做出决策、并在有限人工监督下调用软件或其他工具的智能体，将占全球 AI 算力流量的 90% 以上。华为还预计届时活跃智能体可多达 9000 亿个，并将智能体安全与隐私列为关键技术。</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>proliferate</strong> /prəˈlɪfəreɪt/ v. 迅速扩散、激增（考研高频）</div>
+      <div class="item"><strong>forecast</strong> /ˈfɔːkɑːst/ v./n. 预测</div>
+      <div class="item"><strong>supervision</strong> /ˌsuːpəˈvɪʒn/ n. 监督</div>
+      <div class="item"><strong>account for</strong> 占（比例）</div>
+      <div class="item"><strong>processing traffic</strong> 处理流量/算力流量</div>
+      <div class="item"><strong>project</strong> v. 预计、推算</div>
+      <div class="item"><strong>crucial</strong> /ˈkruːʃl/ adj. 关键的、至关重要的</div>
+    </div></div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="en">Huawei is China's main domestic supplier of the computing infrastructure needed to train advanced AI models. Its outsize role in China's $50 billion AI chip market stems directly from U.S. export controls since 2023 that restricted Chinese companies' access to cutting-edge chips from U.S. giant Nvidia. Xu said separately on Thursday that Huawei could not produce enough AI computing equipment to satisfy domestic demand.</p>
+  <div class="panel" data-kind="zh">
+    <button type="button" class="toggle" data-show="显示中文" data-hide="隐藏中文">显示中文</button>
+    <div class="panel-body"><p class="zh">华为是中国训练先进 AI 模型所需算力基础设施的主要国产供应商。它在中国约 500 亿美元 AI 芯片市场中的超大体量地位，直接源于 2023 年以来美国的出口管制——这些管制限制了中国公司获取美国巨头英伟达的尖端芯片。徐直军周四另表示，华为尚无法生产出足够的 AI 算力设备来满足国内需求。</p></div>
+  </div>
+  <div class="panel" data-kind="notes">
+    <button type="button" class="toggle" data-show="显示生词" data-hide="隐藏生词">显示生词</button>
+    <div class="panel-body"><div class="notes">
+      <div class="item"><strong>infrastructure</strong> /ˈɪnfrəstrʌktʃə(r)/ n. 基础设施</div>
+      <div class="item"><strong>outsize</strong> /ˈaʊtsaɪz/ adj. 超大的、格外突出的</div>
+      <div class="item"><strong>stem from</strong> 源于、由…引起</div>
+      <div class="item"><strong>export controls</strong> 出口管制</div>
+      <div class="item"><strong>cutting-edge</strong> 尖端的、最前沿的</div>
+      <div class="item"><strong>satisfy demand</strong> 满足需求</div>
+    </div></div>
+  </div>
+</section>
+
+<aside class="tip panel" data-kind="tip">
+  <button type="button" class="toggle" data-show="显示复盘" data-hide="隐藏复盘">显示复盘</button>
+  <div class="tip-body panel-body">
+    <h2>今日一分钟复盘</h2>
+    <p style="margin:0">核心论点：美国前沿实验室因算力更强，可能已“感知”到中国厂商尚感受不到的安全风险；徐直军主张中国先把能力追上去，同时在发展与风控间取得平衡。阅读时可抓对比结构：<em>U.S. frontier risks vs China capability gap → pace debate → agents & standards → export controls</em>。写作可记句型 <em>strike a balance between A and B</em>、<em>portray A as B</em>、<em>press ahead with</em>。</p>
+  </div>
+</aside>
+
+<footer>推特新闻 · 每日考研英语精读 · 仅供个人学习 · 原文版权归 Reuters</footer>
+</div>
+<script>
+(function () {
+  function setOpen(panel, open) {
+    panel.classList.toggle('open', open);
+    var btn = panel.querySelector(':scope > .toggle');
+    if (!btn) return;
+    btn.textContent = open ? (btn.getAttribute('data-hide') || '隐藏') : (btn.getAttribute('data-show') || '显示');
+  }
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    var btn = panel.querySelector(':scope > .toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      setOpen(panel, !panel.classList.contains('open'));
+    });
+  });
+  var showAll = document.getElementById('showAll');
+  var hideAll = document.getElementById('hideAll');
+  if (showAll) showAll.addEventListener('click', function () {
+    document.querySelectorAll('.panel').forEach(function (p) { setOpen(p, true); });
+  });
+  if (hideAll) hideAll.addEventListener('click', function () {
+    document.querySelectorAll('.panel').forEach(function (p) { setOpen(p, false); });
+  });
+})();
+</script>
+</body>
+</html>
