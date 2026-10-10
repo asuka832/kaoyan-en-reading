@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>考研英语精读 · 2026-10-10 · India AI curriculum mandate</title>
+<style>body{font-family:system-ui;margin:40px;color:#333}.err{color:#a00}</style></head>
+<body><p id="s">加载中…</p>
+<script>
+(async function(){
+  var bases=[
+    'https://cdn.jsdelivr.net/gh/asuka832/kaoyan-en-reading@main/days/2026-10-10.p',
+    'https://raw.githubusercontent.com/asuka832/kaoyan-en-reading/main/days/2026-10-10.p'
+  ];
+  var n=4, v='?v=20261010a';
+  var lastErr=null;
+  for(var b=0;b<bases.length;b++){
+    try{
+      var parts=[];
+      for(var i=0;i<n;i++){
+        var r=await fetch(bases[b]+i+'.txt'+v);
+        if(!r.ok) throw new Error('part '+i+' HTTP '+r.status);
+        parts.push(await r.text());
+      }
+      document.open();document.write(parts.join(''));document.close();
+      return;
+    }catch(e){ lastErr=e; }
+  }
+  var el=document.getElementById('s');
+  el.className='err';
+  el.textContent='加载失败：'+lastErr;
+})();
+</script></body></html>
