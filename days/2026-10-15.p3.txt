@@ -1,0 +1,9 @@
+<aside class="tip"><div class="panel"><button class="toggle" data-show="显示复盘" data-hide="隐藏复盘">显示复盘</button><div class="panel-body tip-body"><h2>复盘</h2>
+<p><strong>文章结构：</strong>导语（现场会 + 中心升级 + 全覆盖培训）→ 会议地点/嘉宾/主题 → AI 素养专区功能 → 五环节沉浸式示范 → 「学—用—创」路径与因材施教/超应试目标 → 承接《「人工智能+教育」行动计划》→ 国家平台规模逻辑 → 对 edtech「标准化基线」信号。阅读时可抓「政策落地—平台载体—全覆盖—五环节能力链」。</p>
+<p><strong>考研词汇与搭配：</strong>field conference、relaunch、full-coverage、literacy、underpin、self-directed、immersive、scenario-based、be tailored to、cultivate、go beyond、be woven into、operational delivery channel、workforce、cohort、scattered pilots、plug into、align with。注意 underpin / woven into / cohort / tailored to 等正式搭配。</p>
+<p><strong>阅读技巧：</strong>专名与政策名（Teacher Development Center、AI Plus Education）常出细节题；「full coverage vs pilot cohort」是对比结构；结尾厂商视角把教育新闻接到产业信号，易考主旨延伸。</p>
+</div></div></aside>
+<footer>每日考研英语精读 · 仅供个人学习 · 原文版权归 JMDedu</footer>
+</div>
+<script>(function(){function setOpen(p,o){p.classList.toggle('open',o);var b=p.querySelector(':scope > .toggle');if(b)b.textContent=o?(b.dataset.hide||'隐藏'):(b.dataset.show||'显示')}document.querySelectorAll('.panel').forEach(function(p){var b=p.querySelector(':scope > .toggle');if(b)b.addEventListener('click',function(){setOpen(p,!p.classList.contains('open'))})});document.getElementById('showAll').onclick=function(){document.querySelectorAll('.panel').forEach(function(p){setOpen(p,true)})};document.getElementById('hideAll').onclick=function(){document.querySelectorAll('.panel').forEach(function(p){setOpen(p,false)})}})();</script>
+</body></html>
