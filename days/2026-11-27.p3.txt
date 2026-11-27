@@ -1,0 +1,11 @@
+<aside class="tip"><div class="panel"><button class="toggle" data-show="显示复盘" data-hide="隐藏复盘">显示复盘</button><div class="panel-body tip-body">
+<h2>复盘</h2>
+<p><strong>主旨：</strong>中国周五在上海复旦大学成立全国性科技伦理学会，汇聚跨学科力量，以推动负责任创新并加强伦理治理；背景是人工智能、脑机接口等新兴技术带来日益紧迫的伦理问题，此举也是落实 2022 年要求组建全国性伦理机构的国家指导意见。</p>
+<p><strong>结构：</strong>首段交代成立时间、地点与宗旨 → 梅宏谈桥梁作用，以及“扎根中国、面向世界”的知识与实践体系 → 列举规范标准、专业咨询、教育培训、学术诚信与国际合作等职能 → 用 as 从句点出人工智能与脑机接口带来的伦理压力 → 回溯 2022 年国家指导意见 → 江小涓评价其组织意义，并强调学术研究与治理实践的融合平台。</p>
+<p><strong>考研词汇与搭配：</strong>establish、national、ethics、society、bring together、expertise、across disciplines、promote、responsible innovation、strengthen、ethical governance、academician、serve as、bridge、academic community、aim to、be rooted in、open to the world、work on、norms、standards、professional advice、foster、academic integrity、international exchanges and cooperation、the need for、increasingly、pressing、emerging technologies、raise questions、ethical dilemma、surrounding、brain-computer interface、establishment、follow、national directive、call for、body、academic support、important step、organizational system、platform、integrate A with B、governance practice。熟词僻义：society（学会）、discipline（学科）、pressing（紧迫的）、follow（是……之后的落实）、body（机构）。</p>
+<p><strong>阅读技巧：</strong>标题中的 establishes、ethics society、to promote responsible innovation 已点明“机构成立 + 目的是负责任创新”。注意首段 bringing together ... to promote ... and strengthen ... 这一“手段 + 目的”结构，以及第四段 as 引导的原因/伴随从句。rooted in China and open to the world 是对立统一的评价语。末段 important step、new platform 属于正面评价，但文中 pressing、complex questions、ethical dilemmas 说明成立背后是风险倒逼，态度题不宜只看成庆贺新闻。</p>
+</div></div></aside>
+<footer>每日考研英语精读 · 仅供个人学习 · 原文版权归 Xinhua</footer>
+</div>
+<script>(function(){function setOpen(p,o){p.classList.toggle('open',o);var b=p.querySelector(':scope > .toggle');if(b)b.textContent=o?(b.dataset.hide||'隐藏'):(b.dataset.show||'显示')}document.querySelectorAll('.panel').forEach(function(p){var b=p.querySelector(':scope > .toggle');if(b)b.addEventListener('click',function(){setOpen(p,!p.classList.contains('open'))})});document.getElementById('showAll').onclick=function(){document.querySelectorAll('.panel').forEach(function(p){setOpen(p,true)})};document.getElementById('hideAll').onclick=function(){document.querySelectorAll('.panel').forEach(function(p){setOpen(p,false)})}})();</script>
+</body></html>
